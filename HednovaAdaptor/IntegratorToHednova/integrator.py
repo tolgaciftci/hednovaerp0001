@@ -274,7 +274,7 @@ def UpdateSistemStokBirimleri(conn, kod, rows):
     """
     KR_GECOUST tablosunu günceller:
       - islemturu == 2 → INSERT
-      - islemturu == 3 → UPDATE
+      - islemturu == 3 → UPDATE (yoksa INSERT)
       - islemturu == 4 → DELETE
     Diğer durumlar atlanır.
     """
@@ -297,19 +297,19 @@ def UpdateSistemStokBirimleri(conn, kod, rows):
                 pass
 
         for item in rows:
-            keykayit = item.get("keykayit")
+            keykayit = str(item.get("keykayit"))
             islemturu = item.get("islemturu")
             birimkod = item.get("birimkod")
             birimadi = item.get("birimadi")
 
             # 🟢 INSERT (islemturu == 2)
             if islemturu == 2:
-                sql = """
+                sql_insert = """
                     INSERT INTO KR_GECOUST (EVRAKNO, KOD, AD, AP10, TLOG_LOGTARIH, TLOG_LOGTIME, ENT01)
                     VALUES (?, ?, ?, ?, ?, ?, ?)
                 """
-                cursor.execute(sql, (
-                    "STUNIT",       # EVRAKNO sabit
+                cursor.execute(sql_insert, (
+                    "STUNIT",  # EVRAKNO sabit
                     birimkod,
                     birimadi,
                     1,
@@ -321,29 +321,52 @@ def UpdateSistemStokBirimleri(conn, kod, rows):
 
             # 🟠 UPDATE (islemturu == 3)
             elif islemturu == 3:
-                sql = """
-                    UPDATE KR_GECOUST
-                    SET EVRAKNO=?, KOD=?, AD=?, AP10=?, TLOG_LOGTARIH=?, TLOG_LOGTIME=?
-                    WHERE ENT01=?
-                """
-                cursor.execute(sql, (
-                    "STUNIT",
-                    birimkod,
-                    birimadi,
-                    1,
-                    tarih,
-                    saat,
-                    keykayit
-                ))
+                # önce kayıt var mı kontrol et
+                sql_check = "SELECT COUNT(*) FROM KR_GECOUST WHERE ENT01=?"
+                cursor.execute(sql_check, (keykayit,))
+                exists = cursor.fetchone()[0]
+
+                if exists:
+                    # varsa UPDATE
+                    sql_update = """
+                        UPDATE KR_GECOUST
+                        SET EVRAKNO=?, KOD=?, AD=?, AP10=?, TLOG_LOGTARIH=?, TLOG_LOGTIME=?
+                        WHERE ENT01=?
+                    """
+                    cursor.execute(sql_update, (
+                        "STUNIT",
+                        birimkod,
+                        birimadi,
+                        1,
+                        tarih,
+                        saat,
+                        keykayit
+                    ))
+                else:
+                    # yoksa INSERT
+                    sql_insert = """
+                        INSERT INTO KR_GECOUST (EVRAKNO, KOD, AD, AP10, TLOG_LOGTARIH, TLOG_LOGTIME, ENT01)
+                        VALUES (?, ?, ?, ?, ?, ?, ?)
+                    """
+                    cursor.execute(sql_insert, (
+                        "STUNIT",
+                        birimkod,
+                        birimadi,
+                        1,
+                        tarih,
+                        saat,
+                        keykayit
+                    ))
+
                 toplam_islem += 1
 
             # 🔴 DELETE (islemturu == 4)
             elif islemturu == 4:
-                sql = "DELETE FROM KR_GECOUST WHERE ENT01=?"
-                cursor.execute(sql, (keykayit,))
+                sql_delete = "DELETE FROM KR_GECOUST WHERE ENT01=?"
+                cursor.execute(sql_delete, (keykayit,))
                 toplam_islem += 1
 
-            # ⚪ Diğer durumlar (atla)
+            # ⚪ Diğer durumlar
             else:
                 continue
 
