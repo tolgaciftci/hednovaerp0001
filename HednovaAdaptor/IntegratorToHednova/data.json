@@ -9,7 +9,7 @@
     "apikey": "77838968-b9b3-4ba7-8edd-ff3b52b05234"
   },
   "hednova": {
-    "connectionstring": "Driver={ODBC Driver 17 for SQL Server};Server=DESKTOP-0ID8PJD\\SQLEXPRESS;Database=BARTEZ_2025;Uid=sa;Pwd=123;TrustServerCertificate=yes;",
+    "connectionstring": "Server=89.252.181.138\\MSSQLSERVER2022;Database=hednovae_bartez_2025;Uid=hednovae_admin;Pwd=y!D_8cEz4orptgH0;TrustServerCertificate=yes;",
     "integratorperiod": 10
   }
 }

@@ -26,7 +26,7 @@ class LoginScreen(QWidget):
         logo = QLabel()
         pixmap = QPixmap(os.path.join(BASE_DIR, "logo.png")).scaled(
             140, 140, Qt.KeepAspectRatio, Qt.SmoothTransformation
-        )
+        ) 
         logo.setPixmap(pixmap)
         logo.setAlignment(Qt.AlignCenter)
         layout.addWidget(logo)
