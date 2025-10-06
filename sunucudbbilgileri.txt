@@ -1,0 +1,4 @@
+Sunucu: 89.252.181.138\MSSQLSERVER2022
+Db: hednovae_bartez_2025
+Kullanıcı: hednovae_admin
+Parola: y!D_8cEz4orptgH0
