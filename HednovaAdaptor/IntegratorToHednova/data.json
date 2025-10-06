@@ -1,0 +1,15 @@
+{
+  "user": "admin",
+  "password": "1919",
+  "integrator": {
+    "user": "mobil",
+    "password": "1919",
+    "company": "11",
+    "period": "1",
+    "apikey": "77838968-b9b3-4ba7-8edd-ff3b52b05234"
+  },
+  "hednova": {
+    "connectionstring": "Driver={ODBC Driver 17 for SQL Server};Server=DESKTOP-0ID8PJD\\SQLEXPRESS;Database=BARTEZ_2025;Uid=sa;Pwd=123;TrustServerCertificate=yes;",
+    "integratorperiod": 10
+  }
+}
