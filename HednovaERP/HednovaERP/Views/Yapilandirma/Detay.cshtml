@@ -1,0 +1,57 @@
+﻿@model HednovaERP.Models.YapilandirmaDetayVM
+@{
+    ViewData["Title"] = "Yapılandırma Detay";
+    Layout = "_Layout";
+}
+
+<!-- EN ÜST: 2 GENİŞ BUTON (w-50 / w-50) -->
+<section class="yd-topbar container-xxl">
+    <div class="yd-topbar__grid">
+        <a class="yd-btn yd-btn--back" asp-controller="Yapilandirma" asp-action="Liste" title="Listeye Geri Dön">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Listeye Geri Dön</span>
+        </a>
+        <button id="ydSave" type="button" class="yd-btn yd-btn--save" title="Kaydet">
+            <i class="fa-solid fa-floppy-disk"></i>
+            <span>Kaydet</span>
+        </button>
+    </div>
+</section>
+
+<!-- ÖZET KART -->
+<section class="yd-summary container-xxl">
+    <article class="yd-summary-card">
+        <div class="yd-summary-top">
+            <span class="yd-code">@Model.EvrakNo</span>
+            <span class="yd-pill"><i class="fa-solid fa-industry me-1"></i> Üretim</span>
+        </div>
+        <h1 class="yd-summary-title">Üretim</h1>
+        <p class="yd-summary-desc">@Model.Aciklama</p>
+    </article>
+</section>
+
+<!-- ARAMA + PARAMETRE KARTLARI -->
+<section class="yd-params container-xxl">
+    <div class="yd-params-search">
+        <div class="input-group input-group-lg">
+            <span class="input-group-text bg-transparent border-end-0">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+            <input id="ydSearch" type="search" class="form-control border-start-0"
+                   placeholder="İsme göre ara..." autocomplete="off" />
+            <button id="ydClear" class="btn btn-outline-secondary border-start-0 d-none" type="button" title="Temizle">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="yd-scroll-x">
+        <form id="ydForm" class="yd-grid" novalidate></form>
+    </div>
+</section>
+
+<!-- Basit toast -->
+<div id="ydToast" class="yd-toast" role="status" aria-live="polite"></div>
+
+<link rel="stylesheet" href="~/css/yapilandirma_liste_detay.css" asp-append-version="true" />
+<script src="~/js/yapilandirma_liste_detay.js" asp-append-version="true"></script>

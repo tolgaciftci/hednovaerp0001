@@ -1,0 +1,175 @@
+﻿@* Modern responsive sidebar; tek menü ikonu açık/kapalıya göre yer değiştirir *@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - HednovaERP</title>
+
+    <!-- Yazı tipi -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/HednovaERP.styles.css" asp-append-version="true" />
+</head>
+<body class="erp">
+
+    <div class="shell">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-head">
+                <!-- Büyük logo (≈3×) -->
+                <div class="sidebar-logo">
+                    <img src="~/images/logo.png" alt="Logo">
+                </div>
+                <!-- Menü ikonu JS ile buraya taşınacak (açıkken) -->
+                <div id="menuButtonSlot" class="menu-button-slot"></div>
+            </div>
+
+            <!-- Arama -->
+            <div class="sidebar-search">
+                <div class="input-group input-group-sm">
+                    <span class="input-group-text bg-transparent border-end-0"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <input id="sidebarSearch" type="search" class="form-control border-start-0" placeholder="Menüde ara..." autocomplete="off" />
+                    <button id="btnClearSearch" class="btn btn-outline-secondary border-start-0 d-none" type="button" aria-label="Temizle">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Menü -->
+            <nav id="menuTree" class="sidebar-nav">
+                <!-- ÜRETİM -->
+                <div class="group" data-key="grp-uretim">
+                    <button class="group-toggle" type="button" aria-expanded="true">
+                        <i class="fa-solid fa-industry"></i>
+                        <span>Üretim</span>
+                        <i class="fa-solid fa-chevron-down caret"></i>
+                    </button>
+                    <div class="group-body show">
+                        <a class="item" asp-controller="UretimBildirme" asp-action="Index">
+                            <i class="fa-solid fa-clipboard-list"></i><span>Üretim Bildirme</span>
+                        </a>
+
+                        <div class="group inner" data-key="grp-uretim-bildirme-ekran">
+                            <button class="group-toggle" type="button" aria-expanded="true">
+                                <i class="fa-solid fa-table-columns"></i><span>Üretim Bildirme Ekranı</span>
+                                <i class="fa-solid fa-chevron-down caret"></i>
+                            </button>
+                            <div class="group-body show">
+                                <a class="item" asp-controller="UretimBildirme01" asp-action="Index">
+                                    <i class="fa-regular fa-square-check"></i><span>01</span>
+                                </a>
+                                <a class="item" asp-controller="UretimBildirme02" asp-action="Index">
+                                    <i class="fa-regular fa-square-check"></i><span>02</span>
+                                </a>
+                                <a class="item" asp-controller="UretimBildirme03" asp-action="Index">
+                                    <i class="fa-regular fa-square-check"></i><span>03</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="group" data-key="grp-raporlar">
+                            <button class="group-toggle" type="button" aria-expanded="false">
+                                <i class="fa-solid fa-chart-line"></i>
+                                <span>Raporlar</span>
+                                <i class="fa-solid fa-chevron-down caret"></i>
+                            </button>
+                            <div class="group-body">
+                                <a class="item" asp-controller="OeeRaporu" asp-action="Index">
+                                    <i class="fa-solid fa-gauge"></i><span>OEE Raporu</span>
+                                </a>
+                                <a class="item" asp-controller="DurusRaporu" asp-action="Index">
+                                    <i class="fa-regular fa-pause-circle"></i><span>Duruş Raporu</span>
+                                </a>
+                                <a class="item" asp-controller="KaliteRaporu" asp-action="Index">
+                                    <i class="fa-solid fa-shield-heart"></i><span>Kalite Raporu</span>
+                                </a>
+                                <a class="item" asp-controller="UretimOzetRapor" asp-action="Index">
+                                    <i class="fa-regular fa-file-lines"></i><span>Üretim Özet</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ayraç çizgi -->
+                <hr class="sidebar-sep" />
+
+                <!-- SİSTEM -->
+                <div class="group" data-key="grp-sistem">
+                    <button class="group-toggle" type="button" aria-expanded="false">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>Sistem</span>
+                        <i class="fa-solid fa-chevron-down caret"></i>
+                    </button>
+                    <div class="group-body">
+                        <div class="group inner" data-key="grp-kullanicilar">
+                            <button class="group-toggle" type="button" aria-expanded="false">
+                                <i class="fa-solid fa-users"></i><span>Kullanıcılar</span>
+                                <i class="fa-solid fa-chevron-down caret"></i>
+                            </button>
+                            <div class="group-body">
+                                <a class="item" asp-controller="Kullanici" asp-action="Index">
+                                    <i class="fa-regular fa-address-card"></i><span>Kullanıcı Listesi</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="group inner" data-key="grp-yapilandirma">
+                            <button class="group-toggle" type="button" aria-expanded="false">
+                                <i class="fa-solid fa-sliders"></i><span>Yapılandırma</span>
+                                <i class="fa-solid fa-chevron-down caret"></i>
+                            </button>
+                            <div class="group-body">
+                                <a class="item" asp-controller="Yapilandirma" asp-action="Liste">
+                                    <i class="fa-solid fa-wrench"></i><span>Yapılandırma Listesi</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="group inner" data-key="grp-entegrasyon">
+                            <button class="group-toggle" type="button" aria-expanded="false">
+                                <i class="fa-solid fa-plug"></i><span>Entegrasyon</span>
+                                <i class="fa-solid fa-chevron-down caret"></i>
+                            </button>
+                            <div class="group-body">
+                                <a class="item" asp-controller="Entegrasyon" asp-action="Index">
+                                    <i class="fa-solid fa-plug-circle-bolt"></i><span>Entegrasyon Ayarları</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- İçerik -->
+        <div class="main">
+            <!-- Tek MENÜ İKONU (JS bunu konumlar: kapalıyken sağ üstte; açıkken sidebar içine) -->
+            <button id="btnMenu" class="menu-btn" type="button" aria-label="Menü">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+
+            <main class="main-body">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,195 @@
+﻿/* ========= Tema ========= */
+:root {
+    --brand: #2F6F75; /* hednova yeşili (ikon & butonlar) */
+    --brand-ghost: #e4f0f1; /* açık ton */
+    --text: #0f172a;
+    --muted: #64748b;
+    --card: #ffffff;
+    --border: 1px solid rgba(0,0,0,.06);
+    --radius: 16px;
+    --radius-sm: 12px;
+    --shadow: 0 12px 30px rgba(16,24,40,.07);
+}
+
+/* ========= Başlık & Arama ========= */
+.yl-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 16px;
+    margin: 6px auto 14px;
+    padding: 0 6px;
+}
+
+.yl-title {
+    margin: 0;
+    font-weight: 800;
+    letter-spacing: .2px;
+}
+
+.yl-search {
+    flex: 1 1 460px;
+    min-width: 280px;
+}
+
+#ylSearch:focus {
+    box-shadow: none;
+}
+
+#ylClear {
+    border-left: 0 !important;
+}
+
+/* ========= Grid ========= */
+.yl-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 14px;
+    padding: 0 6px 20px;
+}
+
+@media (max-width: 1400px) {
+    .yl-grid {
+        grid-template-columns: repeat(12, 1fr);
+    }
+}
+
+@media (max-width: 1200px) {
+    .yl-grid {
+        grid-template-columns: repeat(12, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .yl-grid {
+        grid-template-columns: repeat(12, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .yl-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .yl-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* 3 sütunlu kart (xl:4 kol, lg:6, md:6, sm:12) */
+.yl-col {
+    grid-column: span 4;
+}
+
+@media (max-width: 1200px) {
+    .yl-col {
+        grid-column: span 4;
+    }
+}
+
+@media (max-width: 992px) {
+    .yl-col {
+        grid-column: span 6;
+    }
+}
+
+@media (max-width: 576px) {
+    .yl-col {
+        grid-column: span 12;
+    }
+}
+
+/* ========= Kart ========= */
+.yl-card {
+    background: var(--card);
+    border: var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform .06s ease, box-shadow .15s ease, border-color .15s ease;
+    height: 100%;
+}
+
+    .yl-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 34px rgba(16,24,40,.10);
+        border-color: rgba(0,0,0,.10);
+    }
+
+/* Üst satır: Evrak No + İkon rozeti */
+.yl-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.yl-code {
+    font-weight: 800;
+    letter-spacing: .3px;
+    color: var(--brand);
+}
+
+.yl-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--brand);
+    color: #fff;
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-weight: 700;
+    font-size: .85rem;
+}
+
+    .yl-badge i {
+        font-size: 14px;
+    }
+
+/* İsim & Açıklama */
+.yl-name {
+    margin: 6px 0 0;
+    font-weight: 800;
+    color: var(--text);
+}
+
+.yl-desc {
+    margin: 2px 0 0;
+    color: var(--muted);
+}
+
+/* Alt: Git butonu */
+.yl-actions {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.yl-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--brand);
+    background: var(--brand);
+    color: #fff;
+    border-radius: 12px;
+    padding: 10px 14px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+    .yl-btn:hover {
+        filter: brightness(.95);
+        color: #fff;
+        text-decoration: none;
+    }
+
+/* Arama sonucu gizleme */
+.yl-hidden {
+    display: none !important;
+}

@@ -1,0 +1,109 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\kirpiapps\\csharp\\HednovaERP\\HednovaERP\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3814AD89-F367-4616-AC68-13373120E0EE}|HednovaERP.csproj|c:\\kirpiapps\\csharp\\hednovaerp\\hednovaerp\\views\\uretimbildirme01\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3814AD89-F367-4616-AC68-13373120E0EE}|HednovaERP.csproj|solutionrelative:views\\uretimbildirme01\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3814AD89-F367-4616-AC68-13373120E0EE}|HednovaERP.csproj|c:\\kirpiapps\\csharp\\hednovaerp\\hednovaerp\\wwwroot\\js\\uretim_bildirme_01.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{3814AD89-F367-4616-AC68-13373120E0EE}|HednovaERP.csproj|solutionrelative:wwwroot\\js\\uretim_bildirme_01.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3814AD89-F367-4616-AC68-13373120E0EE}|HednovaERP.csproj|c:\\kirpiapps\\csharp\\hednovaerp\\hednovaerp\\wwwroot\\css\\uretim_bildirme_01.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{3814AD89-F367-4616-AC68-13373120E0EE}|HednovaERP.csproj|solutionrelative:wwwroot\\css\\uretim_bildirme_01.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3814AD89-F367-4616-AC68-13373120E0EE}|HednovaERP.csproj|c:\\kirpiapps\\csharp\\hednovaerp\\hednovaerp\\controllers\\uretimbildirme01controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3814AD89-F367-4616-AC68-13373120E0EE}|HednovaERP.csproj|solutionrelative:controllers\\uretimbildirme01controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3814AD89-F367-4616-AC68-13373120E0EE}|HednovaERP.csproj|c:\\kirpiapps\\csharp\\hednovaerp\\hednovaerp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3814AD89-F367-4616-AC68-13373120E0EE}|HednovaERP.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\kirpiapps\\csharp\\HednovaERP\\HednovaERP\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\kirpiapps\\csharp\\HednovaERP\\HednovaERP\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T08:29:09.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "uretim_bildirme_01.css",
+              "DocumentMoniker": "C:\\kirpiapps\\csharp\\HednovaERP\\HednovaERP\\wwwroot\\css\\uretim_bildirme_01.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\uretim_bildirme_01.css",
+              "ToolTip": "C:\\kirpiapps\\csharp\\HednovaERP\\HednovaERP\\wwwroot\\css\\uretim_bildirme_01.css",
+              "RelativeToolTip": "wwwroot\\css\\uretim_bildirme_01.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-17T08:14:31.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "uretim_bildirme_01.js",
+              "DocumentMoniker": "C:\\kirpiapps\\csharp\\HednovaERP\\HednovaERP\\wwwroot\\js\\uretim_bildirme_01.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\uretim_bildirme_01.js",
+              "ToolTip": "C:\\kirpiapps\\csharp\\HednovaERP\\HednovaERP\\wwwroot\\js\\uretim_bildirme_01.js",
+              "RelativeToolTip": "wwwroot\\js\\uretim_bildirme_01.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-10-17T08:14:12.65Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\kirpiapps\\csharp\\HednovaERP\\HednovaERP\\Views\\UretimBildirme01\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\UretimBildirme01\\Index.cshtml",
+              "ToolTip": "C:\\kirpiapps\\csharp\\HednovaERP\\HednovaERP\\Views\\UretimBildirme01\\Index.cshtml",
+              "RelativeToolTip": "Views\\UretimBildirme01\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-17T08:11:10.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UretimBildirme01Controller.cs",
+              "DocumentMoniker": "C:\\kirpiapps\\csharp\\HednovaERP\\HednovaERP\\Controllers\\UretimBildirme01Controller.cs",
+              "RelativeDocumentMoniker": "Controllers\\UretimBildirme01Controller.cs",
+              "ToolTip": "C:\\kirpiapps\\csharp\\HednovaERP\\HednovaERP\\Controllers\\UretimBildirme01Controller.cs",
+              "RelativeToolTip": "Controllers\\UretimBildirme01Controller.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T08:10:45.058Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

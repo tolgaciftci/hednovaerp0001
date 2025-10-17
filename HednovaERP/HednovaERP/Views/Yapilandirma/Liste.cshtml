@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Yapılandırma Listesi";
+    Layout = "_Layout";
+}
+
+<section class="yl-head container-xxl">
+    <h1 class="yl-title">
+        <i class="fa-solid fa-sliders me-2"></i> Yapılandırma Listesi
+    </h1>
+    <div class="yl-search">
+        <div class="input-group input-group-lg">
+            <span class="input-group-text bg-transparent border-end-0">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+            <input id="ylSearch" type="search" class="form-control border-start-0"
+                   placeholder="İsime göre ara (örn: Satış, Üretim...)" autocomplete="off" />
+            <button id="ylClear" class="btn btn-outline-secondary border-start-0 d-none" type="button" title="Temizle">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <small class="text-muted d-block mt-2">Arama sadece <strong>İsim</strong> alanında yapılır.</small>
+    </div>
+</section>
+
+<section class="yl-grid container-xxl" id="ylGrid">
+    <!-- Kartlar JS ile eklenecek -->
+</section>
+
+<link rel="stylesheet" href="~/css/yapilandirma_liste.css" asp-append-version="true" />
+<script src="~/js/yapilandirma_liste.js" asp-append-version="true"></script>
